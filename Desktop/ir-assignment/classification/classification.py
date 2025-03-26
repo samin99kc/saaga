@@ -42,3 +42,10 @@ def classify_new_text(text):
     prediction = model.predict([text])[0]
     return prediction
 
+# Run real-time test if script is executed directly
+if __name__ == "__main__":
+    while True:
+        text = input("Enter a sentence to classify (or type 'exit' to quit): ")
+        if text.lower() == "exit":
+            break
+        print("Predicted Category:", classify_new_text(text))
